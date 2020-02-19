@@ -13,6 +13,7 @@ def show(request):
     # data=[1,1,2,3,3,3]
     data=[{'name':'wuhan','addinfo':'whu'}]
     context = {'data':data}
+    # context=[1,2,2,1,2,1]
     print(context)
     # context={'data':['zy','wh']}
     return render(request,'djoncharts/show.html',context)
