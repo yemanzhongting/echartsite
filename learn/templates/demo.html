@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>预测</title>
+	<link rel="stylesheet" type="text/css" href="/static/easyui/themes/default/easyui.css" >
+    <link rel="stylesheet" type="text/css" href="/static/easyui/themes/icon.css" >
+	<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/static/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="/static/js/echarts.js"></script>
+</head>
+<body class="easyui-layout">
+     <div id="main" data-options="region:'center',title:'center title'" style="padding:15px;width: 600px;height:400px;">
+		 <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+    tooltip : {
+        trigger: 'axis'
+    },
+    legend: {
+        data:['邮件营销']
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            mark : {show: true},
+            dataView : {show: true, readOnly: false},
+            magicType : {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    calculable : true,
+    xAxis : [
+        {
+            type : 'category',
+            boundaryGap : false,
+            data : [1,2,3,4]
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value'
+        }
+    ],
+    series : [
+        {
+            name:'邮件营销',
+            type:'line',
+            stack: '总量',
+            data:{{x|safe}}
+        }
+    ]
+};
+
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+	</div>
+    <div region="west" split="true" title="canshu" style="width:80%;">
+	<form action="/run" method="post" style="padding:5px;">
+		<legend>zu</legend>
+			<select name="ziduan" id="ziduan" style="padding:50px; width:70%;margin:0px 0px 50px 0px;">
+			<option value="sr">sr</option>
+			</select>
+		</fieldset>
+		<br>
+		<input type="submit" value="运行" style="padding:1px; width:40%;">
+	</form>
+	</div>
+</body>
+</html>

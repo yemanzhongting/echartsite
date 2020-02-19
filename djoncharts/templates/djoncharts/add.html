@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <form method="POST" action="/adduser/">
+   		 {% csrf_token %}
+        <sapn>名字</sapn><input type="text" name="name">
+        <sapn>地址</sapn><input type="text" name="address">
+        <input type="submit" value="提交">
+  </form>
+</body>
+</html>
