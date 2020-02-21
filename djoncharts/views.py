@@ -1,12 +1,11 @@
 from django.shortcuts import render
 from django.db import models
-from djoncharts.models import AddressInfo
+from djoncharts.models import AddressInfo,UserInfo,WeiboInfo,coronavirus
 
 # Create your views here.
 def zhexian(request):
     return render(request, 'djoncharts/zhexian.html')
 
-from djoncharts.models import UserInfo
 def show(request):
     data=UserInfo.objects.all()
     print(data)
@@ -34,5 +33,19 @@ def adduser (request):
         # data1.sava()  # 保存修改
     return render(request,'djoncharts/add.html')
 
+def water(request):
+    data = coronavirus.objects.all()
+    # print(data)
+    # data=[1,1,2,3,3,3]
+    # data = [{'name': 'wuhan', 'addinfo': 'whu'}]
+    print(data.values()[0:20])
+    print(type(data))
+    context = {'data': data[0:20]}
+    # print(context[10])
+    # Model.objects.filter(content__contains="条件")
+    # context=[1,2,2,1,2,1]
+    print(context)
+    # context={'data':['zy','wh']}
+    return render(request, 'djoncharts/water.html', context)
 
 

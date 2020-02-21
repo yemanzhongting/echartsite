@@ -1,0 +1,646 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<title>水质监测</title>
+		<link rel="stylesheet" href="{% static 'djoncharts/css/home.css' %}" type="text/css" />
+		<script type="text/javascript" src="{% static 'djoncharts/js/jquery-1.8.2.min.js' %}"></script>
+	</head>
+
+	<body>
+		<div class="tiankong">
+			<div id="header">
+				<!--<div id="logo"></div>-->
+				<div class="denglu">
+					<div class="name">
+						<a href="">您好，张三</a>
+					</div>
+					<div class="exit">
+						<a href="">退出</a>
+					</div>
+				</div>
+			</div>
+		<ul id="nav">
+			<li><a href="index!home">首 页</a></li>
+			<li><a href="index!schedule">水量调度</a></li>
+			<li class="on"><a href="#">水质监测</a></li>
+			<li><a href="#">工程防洪</a></li>
+			<li><a href="index!monitor">闸站监控</a></li>
+			<li><a href="#">工程维护管理</a></li>
+			<li><a href="#">其他信息</a></li>
+			<li><a href="index!base">基础数据管理</a></li>
+			<li><a href="#">通知公告</a></li>
+		</ul>
+		</div>
+		<div class="TabBox">
+			<div class="TabTit">
+				<ul>
+					<h3>水质监测</h3>
+					<li>
+						<a href="#">水质整体情况</a>
+					</li>
+					<li>
+						<a href="#">水质分布及检出查询</a>
+					</li>
+					<li>
+						<a href="#">沿成水质评价</a>
+					</li>
+					<li>
+						<a href="#">测站水质评价</a>
+					</li>
+					<li>
+						<a href="#">舆情监测数据</a>
+					</li>
+				</ul>
+			</div>
+			<div class="TabCon">
+				<div class="shuizhi">
+					<div class="GIS">
+						<img src="{% static 'djoncharts/images/shuizhi.png' %}">
+					</div>
+					<div class="liebiao">
+						<table cellspacing="0" cellpadding="0">
+							<tr class="biaotou">
+								<td width="72">省市</td>
+								<td width="136">水质监测</td>
+								<td width="83">评价水质</td>
+								<td width="148">监测时间</td>
+							</tr>
+							<tr>
+								<td rowspan="4">河南</td>
+								<td>陶岔</td>
+								<td>II</td>
+								<td>2014-5-15 12:00</td>
+							</tr>
+							<tr>
+								<td>姜沟</td>
+								<td>II</td>
+								<td>2014-5-15 12:00</td>
+							</tr>
+							<tr>
+								<td>刘湾</td>
+								<td>II</td>
+								<td>2014-5-15 12:00</td>
+							</tr>
+							<tr>
+								<td>府城南</td>
+								<td>II</td>
+								<td>2014-5-15 12:00</td>
+							</tr>
+							<tr>
+								<td rowspan="4">河北</td>
+								<td>漳河北</td>
+								<td>III</td>
+								<td>2014-5-15 12:00</td>
+							</tr>
+							<tr>
+								<td>南大郭</td>
+								<td>II</td>
+								<td>2014-5-15 12:00</td>
+							</tr>
+							<tr>
+								<td>田庄</td>
+								<td>II</td>
+								<td>2014-5-15 12:00</td>
+							</tr>
+							<tr>
+								<td class="yujing">西黑山</td>
+								<td class="yujing">III</td>
+								<td class="yujing">2014-5-15 12:00</td>
+							</tr>
+							<tr>
+								<td rowspan="3">天津</td>
+								<td>天津外环河</td>
+								<td>II</td>
+								<td>2014-5-15 12:00</td>
+
+							</tr>
+							<tr>
+								<td class="yujing">中易水</td>
+								<td class="yujing">IV</td>
+								<td class="yujing">2014-5-15 12:00</td>
+							</tr>
+							<tr>
+								<td>坟庄河</td>
+								<td>II</td>
+								<td>2014-5-15 12:00</td>
+							</tr>
+							<tr>
+								<td rowspan="2">北京</td>
+								<td class="yujing">惠南庄泵站</td>
+								<td class="yujing">III</td>
+								<td class="yujing">2014-5-15 12:00</td>
+							</tr>
+							<tr>
+								<td>团城湖</td>
+								<td>II</td>
+								<td>2014-5-15 12:00</td>
+							</tr>
+
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="TabCon">
+				<div class="lanmu">
+					<div class="title">水质整体情况</div>
+				</div>
+				<div class="lanmunr">
+					<div class="szchaxun">
+						<table>
+							<tr>
+								<td>测站选择：</td>
+								<td>
+									<select class="xlk">
+										<option value="leixing1">惠南庄</option>
+										<option value="leixing2">选项2</option>
+										<option value="leixing3">选项3</option>
+										<option value="leixing4">选项4</option>
+									</select>
+								</td>
+								<td>时段选择：</td>
+								<td>
+									<select class="xlk">
+										<option value="leixing1">2014年12月</option>
+										<option value="leixing2">选项2</option>
+										<option value="leixing3">选项3</option>
+										<option value="leixing4">选项4</option>
+									</select> 到
+									<select class="xlk">
+										<option value="leixing1">2016年2月</option>
+										<option value="leixing2">选项2</option>
+										<option value="leixing3">选项3</option>
+										<option value="leixing4">选项4</option>
+									</select>
+								</td>
+								<td>水质类别：</td>
+								<td>
+									<select class="xlk">
+										<option value="leixing1">III类</option>
+										<option value="leixing2">选项2</option>
+										<option value="leixing3">选项3</option>
+										<option value="leixing4">选项4</option>
+									</select>
+								</td>
+								<td><input type="button" value="查询" name=""></td>
+							</tr>
+						</table>
+
+					</div>
+					<div class="gaihuatu">
+						<table cellspacing="0" cellpadding="0">
+							<tr class="biaotou">
+								<td>出现时间</td>
+								<td>水质级别</td>
+								<td>检出项</td>
+							</tr>
+							<tr>
+								<td>2014年5月</td>
+								<td>III</td>
+								<td class="zhibiao">总磷、总氮</td>
+							</tr>
+							<tr>
+								<td>2014年6月</td>
+								<td>III</td>
+								<td class="zhibiao">硫酸根、氨氮</td>
+							</tr>
+							<tr>
+								<td>2014年8月</td>
+								<td>III</td>
+								<td class="zhibiao">氨氮、溶解氧</td>
+							</tr>
+							<tr>
+								<td>2014年12月</td>
+								<td>III</td>
+								<td class="zhibiao">TDS、Na+</td>
+							</tr>
+							<tr>
+								<td>2015年5月</td>
+								<td>III</td>
+								<td class="zhibiao">总磷</td>
+							</tr>
+
+							<tr>
+								<td>2015年6月</td>
+								<td>III</td>
+								<td class="zhibiao">硫酸根</td>
+							</tr>
+							<tr>
+								<td>2016年1月</td>
+								<td>III</td>
+								<td class="zhibiao">COD5</td>
+							</tr>
+							<tr>
+								<td>2016年2月</td>
+								<td>III</td>
+								<td class="zhibiao">TDS</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="TabCon">
+				<div class="lanmu">
+					<div class="title">水质分布及检出查询</div>
+				</div>
+				<div class="lanmunr">
+					<div class="chaxun">
+						<table>
+							<tr>
+								<td>测站类型：</td>
+								<td>
+									<select class="xlk">
+										<option value="leixing1">固定监测</option>
+										<option value="leixing2">选项2</option>
+										<option value="leixing3">选项3</option>
+										<option value="leixing4">选项4</option>
+									</select>
+								</td>
+								<td>查询指标：</td>
+								<td>
+									<select class="xlk">
+										<option value="leixing1">陶岔渠首</option>
+										<option value="leixing2">选项2</option>
+										<option value="leixing3">选项3</option>
+										<option value="leixing4">选项4</option>
+									</select>
+								</td>
+								<td>评价类型：</td>
+								<td>
+									<select class="xlk">
+										<option value="leixing1">测次评价</option>
+										<option value="leixing2">选项2</option>
+										<option value="leixing3">选项3</option>
+										<option value="leixing4">选项4</option>
+									</select>
+								</td>
+								<td>评价时段：</td>
+								<td>
+									<select class="xlk">
+										<option value="leixing1">最近12次</option>
+										<option value="leixing2">选项2</option>
+										<option value="leixing3">选项3</option>
+										<option value="leixing4">选项4</option>
+									</select>
+								</td>
+								<td>查询指标：</td>
+								<td>
+									<select class="xlk">
+										<option value="leixing1">最近12次</option>
+										<option value="leixing2">选项2</option>
+										<option value="leixing3">选项3</option>
+										<option value="leixing4">选项4</option>
+									</select>
+								</td>
+							</tr>
+						</table>
+
+					</div>
+					<div class="gaihuatu">
+{#						<img src="{% static 'djoncharts/images/yancheng.png' %}" alt="" />#}
+                        <script src="{% static 'djoncharts/js/echarts.js' %}"></script>
+                        <div id="rivergra" style="width:1000px;height:600px;"></div>
+                                <script type="text/javascript">
+
+                                    // 基于准备好的dom，初始化echarts实例
+                                    var myChart = echarts.init(document.getElementById('rivergra'));
+                                    option = {
+    title: {
+        text: '未来一周气温变化',
+        subtext: '纯属虚构'
+    },
+    tooltip: {
+        trigger: 'axis'
+    },
+    legend: {
+        data: ['最高气温', '最低气温']
+    },
+    toolbox: {
+        show: true,
+        feature: {
+            dataZoom: {
+                yAxisIndex: 'none'
+            },
+            dataView: {readOnly: false},
+            magicType: {type: ['line', 'bar']},
+            restore: {},
+            saveAsImage: {}
+        }
+    },
+    xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+    },
+    yAxis: {
+        type: 'value',
+        axisLabel: {
+            formatter: '{value} °C'
+        }
+    },
+    series: [
+        {
+            name: '最高气温',
+            type: 'line',
+            data: [11, 11, 15, 13, 12, 13, 10],
+            markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+        {
+            name: '最低气温',
+            type: 'line',
+            data: [1, -2, 2, 5, 3, 2, 0],
+            markPoint: {
+                data: [
+                    {name: '周最低', value: -2, xAxis: 1, yAxis: -1.5}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'},
+                    [{
+                        symbol: 'none',
+                        x: '90%',
+                        yAxis: 'max'
+                    }, {
+                        symbol: 'circle',
+                        label: {
+                            position: 'start',
+                            formatter: '最大值'
+                        },
+                        type: 'max',
+                        name: '最高点'
+                    }]
+                ]
+            }
+        }
+    ]
+};
+
+                                    myChart.setOption(option);
+                                </script>
+					</div>
+				</div>
+			</div>
+			<div class="TabCon">
+				<div class="lanmu">
+					<div class="title">测站水质评价</div>
+				</div>
+				<div class="lanmunr">
+					<div class="lanmunr">
+						<div class="chaxun">
+							<table>
+								<tr>
+									<td>测站类型：</td>
+									<td>
+										<select class="xlk">
+											<option value="leixing1">固定监测</option>
+											<option value="leixing2">选项2</option>
+											<option value="leixing3">选项3</option>
+											<option value="leixing4">选项4</option>
+										</select>
+									</td>
+									<td>查询指标：</td>
+									<td>
+										<select class="xlk">
+											<option value="leixing1">陶岔渠首</option>
+											<option value="leixing2">选项2</option>
+											<option value="leixing3">选项3</option>
+											<option value="leixing4">选项4</option>
+										</select>
+									</td>
+									<td>评价类型：</td>
+									<td>
+										<select class="xlk">
+											<option value="leixing1">测次评价</option>
+											<option value="leixing2">选项2</option>
+											<option value="leixing3">选项3</option>
+											<option value="leixing4">选项4</option>
+										</select>
+									</td>
+									<td>评价时段：</td>
+									<td>
+										<select class="xlk">
+											<option value="leixing1">最近12次</option>
+											<option value="leixing2">选项2</option>
+											<option value="leixing3">选项3</option>
+											<option value="leixing4">选项4</option>
+										</select>
+									</td>
+									<td>查询指标：</td>
+									<td>
+										<select class="xlk">
+											<option value="leixing1">最近12次</option>
+											<option value="leixing2">选项2</option>
+											<option value="leixing3">选项3</option>
+											<option value="leixing4">选项4</option>
+										</select>
+									</td>
+								</tr>
+							</table>
+
+						</div>
+						<div class="gaihuatu">
+                            <script src="{% static 'djoncharts/js/echarts.js' %}"></script>
+{#							<img src="{% static 'djoncharts/images/cezhan.png' %}" alt="" />#}
+                            <ul>
+                                {% for obj in data %}
+                                <li> {{ obj.name }}</li>
+                                <li> {{ obj.addinfo }}</li>
+                                {% endfor %}
+                            </ul>
+
+                            <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+                                <div id="main" style="width:600px;height:400px;"></div>
+                                <script type="text/javascript">
+
+                                    // 基于准备好的dom，初始化echarts实例
+                                    var myChart = echarts.init(document.getElementById('main'));
+
+                                    // 指定图表的配置项和数据
+                                    var option = {
+                                            title: {
+                                                text: 'Step Line'
+                                            },
+                                            tooltip: {
+                                                trigger: 'axis'
+                                            },
+                                            legend: {
+                                                data:['Step Start', 'Step Middle', 'Step End']
+                                            },
+                                            grid: {
+                                                left: '3%',
+                                                right: '4%',
+                                                bottom: '3%',
+                                                containLabel: true
+                                            },
+                                            toolbox: {
+                                                feature: {
+                                                    saveAsImage: {}
+                                                }
+                                            },
+                                            xAxis: {
+                                                type: 'category',
+                                                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+                                            },
+                                            yAxis: {
+                                                type: 'value'
+                                            },
+                                            series: [
+                                                {
+                                                    name:'Step Start',
+                                                    type:'line',
+                                                    step: 'start',
+                                                    //:'wh',
+                                                    data:[120, 132, 101, 134, 90, 230, 210]
+                                                },
+                                                {
+                                                    name:'Step Middle',
+                                                    type:'line',
+                                                    step: 'middle',
+                                                    data:[220, 282, 201, 234, 290, 430, 410]
+                                                },
+                                                {
+                                                    name:'Step End',
+                                                    type:'line',
+                                                    step: 'end',
+                                                    data:[450, 432, 401, 454, 590, 530, 510]
+                                                }
+                                            ]
+                                            };
+
+                                    // 使用刚指定的配置项和数据显示图表
+                                    myChart.setOption(option);
+                                </script>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="TabCon">
+				<div class="lanmu">
+					<div class="title">舆情监测数据</div>
+				</div>
+				<div class="lanmunr">
+{#					<div class="baogao">#}
+{#						<ul>#}
+{#							<li>#}
+{#								<a href="#">2015年水质监测报告160524</a>#}
+{#							</li>#}
+{#							<li>#}
+{#								<a href="#">2015年水质监测报告160524</a>#}
+{#							</li>#}
+{#							<li>#}
+{#								<a href="#">2015年水质监测报告160524</a>#}
+{#							</li>#}
+{#							<li>#}
+{#								<a href="#">2015年水质监测报告160524</a>#}
+{#							</li>#}
+{#							<li>#}
+{#								<a href="#">2015年水质监测报告160524</a>#}
+{#							</li>#}
+{#							<li>#}
+{#								<a href="#">2015年水质监测报告160524</a>#}
+{#							</li>#}
+{#							<li>#}
+{#								<a href="#">2015年水质监测报告160524</a>#}
+{#							</li>#}
+{#							<li>#}
+{#								<a href="#">2015年水质监测报告160524</a>#}
+{#							</li>#}
+{#							<li>#}
+{#								<a href="#">2015年水质监测报告160524</a>#}
+{#							</li>#}
+{#						</ul>#}
+{#					</div>#}
+{#                     <h3><a href="/add_publisher/" class="text-danger text-center">添加出版社</a></h3>#}
+                        <table border="1">
+                            <thead>
+                                <tr>
+                                    <th>名称</th>
+                                    <th>时间</th>
+                                    <th>转发</th>
+                                    <th>评论</th>
+                                    <th>内容</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for publisher in data%}
+                                    <tr>
+                                        <td>{{ publisher.name }}</td>
+                                        <td>{{ publisher.timenow}}</td>
+                                        <td>{{ publisher.repost }}</td>
+                                        <td>{{ publisher.comment }}</td>
+                                        <td>{{ publisher.txt }}</td>
+{#                                        <td>#}
+{#                                            <a href="/delete_publisher/?id={{ publisher.id }}&name={{ publisher.name }}">删除</a><!--a标签是GET请求-->#}
+{#                                            <a href="/edit_publisher/?id={{ publisher.id }}">编辑</a>#}
+{#                                        </td>#}
+                                    </tr>
+                                {% endfor %}
+
+                            </tbody>
+                        </table>
+
+					<div class="pagelist">
+						<ul>
+							<li>
+								<a href="#">首页</a>
+							</li>
+							<li>
+								<a href="#">上页</a>
+							</li>
+							<li>
+								<a href="#">1</a>
+							</li>
+							<li>
+								<a href="#">2</a>
+							</li>
+							<li class="current">3</li>
+							<li>
+								<a href="#">4</a>
+							</li>
+							<li>
+								<a href="#">5</a>
+							</li>
+							<li>
+								<a href="#">下页</a>
+							</li>
+							<li>
+								<a href="#">尾页</a>
+							</li>
+							<li class="pageinfo">第3页</li>
+							<li class="pageinfo">共8页</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--div class="footer">
+		<p>版权所有：南水北调中线干线工程建设管理局</p></div-->
+		</div>
+		<script>
+			$(function() {
+				//tab切换
+				$(".TabTit li").click(function() { //绑定点击事件
+					var thisIndex = $(this).parents(".TabTit").find("li").index(this); //获取当前点击的索引
+					$(this).addClass('cur').siblings().removeClass('cur'); //给当前点击添加class
+					$(".TabCon").hide(); //隐藏
+					$(".TabCon:eq(" + thisIndex + ")").show(); //显示
+				});
+				$('.TabTit li:eq(0)').trigger("click"); //给第一个绑定默认点击事件
+			});
+		</script>
+
+	</body>
+
+</html>

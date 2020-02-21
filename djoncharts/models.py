@@ -25,6 +25,45 @@ class UserInfo(models.Model):
     def __str__ (self):
         return self.name
 
+class WeiboInfo(models.Model):
+    """ 用户表 """
+    name=models.CharField(max_length=20)
+    idinfo=models.ForeignKey(AddressInfo)
+    vis=models.CharField(max_length=20)
+    time=models.CharField(max_length=20)
+    city = models.CharField(max_length=20)
+    #这个是两张表之间的关系，关系写在从表身上，ForeignKey（）里面填写的是主表的类名
+    class Meta:
+        # 元类
+        db_table = 'weiboinfo'
+        verbose_name = '微博信息'
+        verbose_name_plural = verbose_name
+    def __str__ (self):
+        return self.name
+
+ # `id` INTEGER NOT NULL,
+ #    `_id` VARBINARY(12),
+ #    `name` LONGTEXT,
+ #    `timenow` LONGTEXT,
+ #    `addr` LONGTEXT,
+ #    `txt` LONGTEXT,
+ #    `repost` INTEGER,
+ #    `comment` INTEGER,
+ #    `thumb` INTEGER,
+ #    PRIMARY KEY (`id`)
+
+# Create your models here.
+class coronavirus(models.Model):
+  id = models.CharField(max_length=36,primary_key=True)
+  name = models.CharField(max_length=30)
+  timenow = models.CharField(max_length=30)
+  addr = models.CharField(max_length=30)
+  txt = models.CharField(max_length=300,null=True)
+  repost = models.IntegerField(3)
+  comment = models.IntegerField(3)
+  thumb = models.IntegerField(3)
+
+# class
 # data1 = AddressInfo.objects.get(add='北京')
 # data1.delete()#使用任意查询语句后跟.delete()即可删除指定数据
 

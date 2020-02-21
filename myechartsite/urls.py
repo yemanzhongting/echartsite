@@ -27,4 +27,5 @@ urlpatterns = [
     url(r'^xr', lv.xr),
     url(r'^show',djv.show),
     url(r'^adduser',djv.adduser),
+    url(r'^water',djv.water),
 ]
