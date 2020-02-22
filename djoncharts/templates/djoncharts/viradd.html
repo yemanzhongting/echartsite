@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta charset="gb2312">
+<title>js简单表单验证</title>
+<script type="text/javascript">
+window.οnlοad=function()
+{
+ var bt=document.getElementById("bt");
+ bt.οnclick=function()
+ {
+  if(document.myform.name.value=="")
+  {
+   alert("用户名不能为空!");
+   document.myform.name.focus();
+   return false;
+  }
+  else if(document.myform.address.value=="dz")
+  {
+   alert("密码不能为空!");
+   document.myform.address.focus();
+   return false;
+  }
+ }
+}
+</script>
+</head>
+<body>
+<div class="title">疫情信息检索与录入</div>
+
+<form method="POST" action="/adduser/">
+   		 {% csrf_token %}
+        <sapn>名字</sapn><input type="text" name="name" id="mz">
+        <sapn>地址</sapn><input type="text" name="address" id="dz">
+        <sapn>来源</sapn><input type="text" name="fromarea" id="ly">
+        <sapn>温度</sapn><input type="number" name="temprature" id="wd">
+        <sapn>电话</sapn><input type="text" name="tele" id="dh">
+        <input type="submit" value="提交" id="bt"/>
+    </form>
+
+</body>
+</html>

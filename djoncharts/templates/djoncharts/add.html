@@ -5,11 +5,16 @@
     <title>Title</title>
 </head>
 <body>
-  <form method="POST" action="/adduser/">
+<div class="title">疫情信息检索与录入</div>
+
+<form method="POST" action="/adduser/">
    		 {% csrf_token %}
         <sapn>名字</sapn><input type="text" name="name">
         <sapn>地址</sapn><input type="text" name="address">
+        <sapn>来源</sapn><input type="text" name="fromarea">
+        <sapn>温度</sapn><input type="number" name="temprature">
+        <sapn>电话</sapn><input type="text" name="tele">
         <input type="submit" value="提交">
-  </form>
+    </form>
 </body>
 </html>

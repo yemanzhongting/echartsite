@@ -12,6 +12,24 @@ class AddressInfo(models.Model):
         verbose_name_plural = verbose_name#去复数形式
     def __str__(self):
         return self.add
+
+# Create your models here.
+class VirusInfo(models.Model):
+    '''地址表
+    类里面的字段代表数据表中的字段(name)，数据类型则由CharField（相当于varchar）、DateField（相当于datetime）， max_length 参数限定长度'''
+    name=models.CharField(max_length=50)
+    addr = models.CharField(max_length=50)
+    fromarea = models.CharField(max_length=50)
+    temprature= models.IntegerField()
+    tele=models.CharField(max_length=50)
+    class Meta:
+        #元类
+        db_table = 'VirusInfo'#定义数据表名称
+        verbose_name = '疫情人员统计'#在网页端显示的名字
+        verbose_name_plural = verbose_name#去复数形式
+    def __str__(self):
+        return self.virus
+
 class UserInfo(models.Model):
     """ 用户表 """
     name=models.CharField(max_length=20)
@@ -59,9 +77,14 @@ class coronavirus(models.Model):
   timenow = models.CharField(max_length=30)
   addr = models.CharField(max_length=30)
   txt = models.CharField(max_length=300,null=True)
-  repost = models.IntegerField(3)
-  comment = models.IntegerField(3)
-  thumb = models.IntegerField(3)
+  repost = models.IntegerField()
+  comment = models.IntegerField()
+  thumb = models.IntegerField()
+
+# class User(models.Model):
+#     username = models.CharField(max_length=20)
+#     password = models.CharField(max_length=20)
+#     email = models.CharField(max_length=40)
 
 # class
 # data1 = AddressInfo.objects.get(add='北京')

@@ -17,15 +17,23 @@ from django.conf.urls import url
 from django.contrib import admin
 from learn import views as lv
 from djoncharts import views as djv
+from django.views.generic.base import RedirectView
+import django
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),#zhexian/$
+    url(r'^admin', admin.site.urls),#zhexian/$
     url(r'zhexian',djv.zhexian, name='zhexian'),
-    url(r'^index1', lv.index1),
+    url(r'^index', lv.index1),
     url(r'^run', lv.run),
     url(r'^chr', lv.chr),
     url(r'^xr', lv.xr),
     url(r'^show',djv.show),
     url(r'^adduser',djv.adduser),
-    url(r'^water',djv.water),
+    url(r'viradd',djv.virus),
+
+    # url(r'^accounts/', users.urls),
+
+    url(r'water',djv.water),#RedirectView.as_view(url=r'static/images/favicon.ico')
+    # url(r'^accounts/login', 'django.contrib.auth.views.login'),
+    #     # #^water
 ]
